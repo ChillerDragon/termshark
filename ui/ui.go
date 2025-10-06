@@ -3286,7 +3286,7 @@ func ApplyCurrentTheme(app gowid.IApp) {
 	var err error
 	mode := app.GetColorMode()
 	modeStr := theme.Mode(mode) // more concise
-	themeName := profiles.ConfString(fmt.Sprintf("main.theme-%s", modeStr), "default")
+	themeName := profiles.ConfString(fmt.Sprintf("main.theme-%s", modeStr), "chiller")
 	loaded := false
 	if themeName != "" {
 		err = theme.Load(themeName, app)
