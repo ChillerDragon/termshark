@@ -42,7 +42,7 @@ func MakeEscapedString(data []byte) string {
 	for i := 0; i < len(data); i++ {
 		buffer.WriteString(fmt.Sprintf("\\x%02x", data[i]))
 		if i%16 == 16-1 || i+1 == len(data) {
-			res = append(res, fmt.Sprintf("\"%s\"", buffer.String()))
+			res = append(res, fmt.Sprintf("b'%s'", buffer.String()))
 			buffer.Reset()
 		}
 	}
